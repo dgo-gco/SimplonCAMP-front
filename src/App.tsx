@@ -5,16 +5,19 @@ import LoginForm from './components/LoginForm';
 import { RegisterForm } from './components/RegisterForm';
 import { Toaster } from 'react-hot-toast';
 import { Dashboard } from './pages/Dashboard';
+import { CampingContextProvider } from './contexts/camping.context';
 
 function App() {
   return (
     <BrowserRouter>
+    <CampingContextProvider>
       <Routes>
         <Route path='register' element={<RegisterForm />}/>
         <Route path='login' element={<LoginForm />}/>
         <Route path='dashboard' element={<Dashboard />}/>
       </Routes>
       <Toaster />
+    </CampingContextProvider>
     </BrowserRouter>
   );
 }
